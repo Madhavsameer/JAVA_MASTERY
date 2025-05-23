@@ -26,7 +26,7 @@ class Interfaced implements MyInterface{
 
 abstract class MyAbstract{
 
-     //Concrete method
+     //Concrete methodd
       void info(){
           System.out.println("I tells info! ");
      }
