@@ -14,10 +14,14 @@ public class practiceSession {
 
          int arr[]={4,8,9,5,3,2,7};
          int arr2[]={8,9,10,11,12};
+         int arr3[]={4,0,5,7,5,0,6,8,9,0,5};
      //     maxMin(arr);
      // reverseArray(arr);
      // System.out.println(sum(arr));
-     System.out.println(isSorted(arr2));
+     // System.out.println(isSorted(arr2));
+     rotateByOne(arr2);
+     moveZeroes(arr3);
+
 
 
           
@@ -179,6 +183,39 @@ public class practiceSession {
           }
 
           return true;
+     }
+
+     public static void rotateByOne(int arr[]){
+          int temp=arr[arr.length-1];
+          for(int i=1; i<arr.length; i++){
+               arr[i]=arr[i-1];
+          }
+          arr[0]=temp;
+          for(int i:arr){
+
+               System.out.print(i+" ");
+
+          }
+     }
+
+     public static void moveZeroes(int arr[]){
+          int count=0;
+          for(int i=0; i<arr.length-1;i++){
+               if(arr[i]==0){
+                    count++;
+                    arr[i+1]=arr[i];
+               }
+          }
+
+          for(int i=arr.length-count; i<count;i++){
+               arr[i]=0;
+          }
+
+          for (int i : arr) {
+
+               System.out.println(i+" ");
+               
+          }
      }
 
 
