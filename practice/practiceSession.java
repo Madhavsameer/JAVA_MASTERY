@@ -19,7 +19,8 @@ public class practiceSession {
      // reverseArray(arr);
      // System.out.println(sum(arr));
      // System.out.println(isSorted(arr2));
-     rotateByOne(arr2);
+     // rotateRight(arr2,2);
+     // rotateLeft(arr2, 2);
      moveZeroes(arr3);
 
 
@@ -65,8 +66,10 @@ public class practiceSession {
           }
 
           else{
+
                myList.add(0);
                myList.add(1);
+
 
                for(int i=2; i<n; i++){
                     myList.add(myList.get(i-1)+myList.get(i-2));
@@ -185,36 +188,69 @@ public class practiceSession {
           return true;
      }
 
-     public static void rotateByOne(int arr[]){
-          int temp=arr[arr.length-1];
-          for(int i=1; i<arr.length; i++){
-               arr[i]=arr[i-1];
-          }
-          arr[0]=temp;
-          for(int i:arr){
+     public static void rotateRight(int arr[],int k){
 
-               System.out.print(i+" ");
+          rotArr(arr, 0, arr.length-1);
+          
 
+          for (int j : arr) {
+               System.out.print(j+" ");
           }
      }
 
+     public static void rotateLeft(int arr[], int k){
+          
+          rotArr(arr, 0, k-1);
+          rotArr(arr, k, arr.length-1);
+          rotArr(arr, 0, arr.length-1);
+          
+          for (int i : arr) {
+               System.out.print(i+" ");
+          }
+
+     }
+
+
+     public static void rotArr(int arr[], int i, int j){
+          while (i<=j) {
+               int temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+               i++;
+               j--;  
+          }   
+     }
+
      public static void moveZeroes(int arr[]){
+          int result[]=new int[arr.length];
+          int index=0;
           int count=0;
-          for(int i=0; i<arr.length-1;i++){
-               if(arr[i]==0){
+          for(int i:arr){
+               if(i!=0){
+                    result[index]=i;
+                    index++;
+               }
+               else{
                     count++;
-                    arr[i+1]=arr[i];
                }
           }
-
-          for(int i=arr.length-count; i<count;i++){
-               arr[i]=0;
+          while(count<=0){
+               result[index]=0;
+               index++;
           }
-
-          for (int i : arr) {
-
+          for (int i : result) {
                System.out.println(i+" ");
-               
+          }
+     }
+
+     public static void secondLargest(int arr[]){
+          int max=Integer.MIN_VALUE;
+          int secondMax=Integer.MIN_VALUE;
+
+          for(int i:arr){
+               if(i>max){
+                    max=i;  
+               }
           }
      }
 
