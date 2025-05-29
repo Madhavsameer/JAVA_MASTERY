@@ -249,7 +249,12 @@ public class practiceSession {
 
           for(int i:arr){
                if(i>max){
-                    max=i;  
+                    max=i; 
+                    secondMax=max; 
+               }
+
+               else{
+                    
                }
           }
      }
