@@ -5,6 +5,7 @@ public class ArraySum {
           
           int arr[]={5,7,8,9,5,4,3};
           System.out.println(arraySum(arr));
+          sum(arr);
           
 
      }
@@ -17,6 +18,17 @@ public class ArraySum {
           }
 
           return sum;
+     }
+
+
+     public static void sum(int arr[]){
+          int currSum=0;
+          for (int var : arr) {
+               currSum+=var;
+          }
+
+          System.out.println("The sum of the given element is: "+currSum);
+          System.out.println("the system has closed fate rprinting the sum: ");
      }
      
 }
